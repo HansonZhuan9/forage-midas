@@ -3,7 +3,7 @@ general:
 
 spring:
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: ${spring.embedded.kafka.brokers}
 
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -26,3 +26,6 @@ spring:
       hibernate:
         ddl-auto: update
       show-sql: true
+
+server:
+  port: 8081
